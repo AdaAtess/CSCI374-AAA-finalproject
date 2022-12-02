@@ -12,4 +12,7 @@ Run `source venv/bin/activate` in the terminal
 - main.py: Selium Script to scrape data originally from instagram 
 - download.ipynb: Jupyter Notebook to download images from instagram 
 - read_images.ipynb: Jupyter Notebook to read images scraped from download.ipynb and extract text from images to create dataset
-- 
+  
+
+## Resources:
+- https://github.com/campdav/text-rnn-tensorflow (Github Repo that explains how to use RNNs to generate text from a dataset)
