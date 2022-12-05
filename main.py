@@ -32,6 +32,24 @@ def loadData(filename):
     dbfile.close()
     return db
 
+"""
+Given a model, save the pickled version 
+Of it with name model_name.
+Returns True if successful
+"""
+def storeModel(model, model_name):
+    pickle.dump(model, open(model_name, 'wb'))
+    return True
+
+"""
+Given a model name, open its pickled model and 
+Return it
+"""
+def loadModel(model_name):
+    model = pickle.load(open(model_name), 'rb')
+    return model
+
+
 tensorflow.random.set_seed(1)
 
 """
@@ -104,12 +122,12 @@ def generate_text(seed_text, next_words, model, max_sequence_len, tokenizer):
     return seed_text
 
 
-# ========= KAGGLE CODE =========
+# ========= end: KAGGLE CODE =========
 
 
 def main():
     # load data
-    input_file = "yikyakyeo/data_sets/medium_yikyakyeo.csv"
+    input_file = "yikyakyeo/data_sets/medium_yikyakyeo_100_count.csv"
     # input_file = "yikyakyeo/data_sets/yikyakyeo.csv"
     data = pd.read_csv(input_file)
     # creates array for all yaks from 'text' column
