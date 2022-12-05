@@ -13,6 +13,25 @@ import string, os
 import tensorflow
 from numpy.random import seed
 
+import pickle
+
+# ========= PICKLE FILE CODE =========
+"""
+Store data in pickle file
+Returns True if successful
+"""
+def storeData(filename, data):
+    dbfile = open(filename, 'ab')
+    pickle.dump(data, dbfile)
+    dbfile.close()
+    return True
+  
+def loadData(filename):
+    dbfile = open(filename, 'rb')
+    db = pickle.load(dbfile)
+    dbfile.close()
+    return db
+
 tensorflow.random.set_seed(1)
 
 """
