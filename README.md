@@ -16,3 +16,4 @@ Run `source venv/bin/activate` in the terminal
 
 ## Resources:
 - https://github.com/campdav/text-rnn-tensorflow (Github Repo that explains how to use RNNs to generate text from a dataset)
+- https://www.kaggle.com/code/shivamb/beginners-guide-to-text-generation-using-lstms (how to generate text using LSTMs in keras/tensorflow)
