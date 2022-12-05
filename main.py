@@ -57,10 +57,12 @@ Main Program for YikYakYeo
 """
 
 
-# ========= KAGGLE CODE =========
 def standardize_text(text):
     txt = "".join(v for v in text if v not in string.punctuation).lower()
     return txt
+
+
+# ========= KAGGLE CODE =========
 
 
 def get_sequence_of_tokens(yaks, tokenizer):
@@ -146,12 +148,13 @@ def main():
     model = create_model(max_sequence_len, total_words)
     # model.summary()
     # train
-    # TODO: will experiment in changing stuff here
-    model.fit(predictors, label, epochs=50, verbose=5)
+    # TODO: will experiment in changing num epochs here
+    # (verbose prints training progress, i.e. 'x/epochs')
+    model.fit(predictors, label, epochs=50, verbose=2)
 
     # generate text
     seed_text = "my"  # can be anything (TODO: will change to set to maybe random)
-    next_words = 5  # num of next words to predict
+    next_words = 5  # num of next words to predict following seed_text, TODO: experiment with
     print(generate_text(seed_text, next_words, model, max_sequence_len, tokenizer))
 
 
