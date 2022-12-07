@@ -124,6 +124,8 @@ def handle_abbreviation(data):
                  ' cos ': ' because ',
                  ' cuz ': ' because ',
                  ' cus ': ' because ',
+                 ' inspo ': ' inspiration ',
+                 ' tryna ': ' trying to ',
                  ' iykyk ': ' if you know you know ',
                  ' oml ': ' oh my lord ',
                  ' so ': ' significant other ',
@@ -265,6 +267,7 @@ def main():
 
     # generate sequence of N-gram Tokens for the model to predict the next token
     # (every int in input_sequences corresponds to the index of a word in the whole vocabulary)
+    yaks = data["text"].tolist()
     tokenizer = Tokenizer()
     input_sequences, total_words = get_sequence_of_tokens(yaks, tokenizer)
     # pad sequences so that they're of same length
