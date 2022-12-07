@@ -65,8 +65,8 @@ def handle_abbreviation(data):
                  'plz': 'please',
                  'u': 'you',
                  'asap': 'as soon as possible',
-                 '...': '',
-                 '. . .': '',
+                 #'...': '',
+                 #'. . .': '',
                  'r': 'are',
                  'ur': 'your',
                  'atm': 'at the moment',
@@ -164,6 +164,9 @@ def handle_abbreviation(data):
                  'ngl': 'not gonna lie',
                  'rn': 'right now',
                  'mf': 'motherfucker'}
+
+
+
     data.replace(replacers, regex=True, inplace=True)
     return data
 
@@ -247,6 +250,7 @@ def main():
     # creates array for all yaks from 'text' column
     yaks = data['text'].tolist()
     for i in range(len(yaks)):
+        print(yaks[i])
         yaks[i] = standardize_text(yaks[i])
 
     # generate sequence of N-gram Tokens for the model to predict the next token
