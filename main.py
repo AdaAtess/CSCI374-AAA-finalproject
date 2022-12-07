@@ -38,7 +38,9 @@ Of it with name model_name.
 Returns True if successful
 """
 def storeModel(model, model_name):
-    pickle.dump(model, open(model_name, 'wb'))
+    model_file = open(model_name, 'wb')
+    pickle.dump(model, model_file)
+    model_file.close()
     return True
 
 """
@@ -46,7 +48,9 @@ Given a model name, open its pickled model and
 Return it
 """
 def loadModel(model_name):
-    model = pickle.load(open(model_name), 'rb')
+    model_file = open(model_name, 'rb')
+    model = pickle.load(model_file)
+    model_file.close()
     return model
 
 
@@ -160,9 +164,11 @@ def handle_abbreviation(data):
                  ' b00bs ': ' boobs ',
                  ' pen15 ': ' penis ',
                  ' prospie ': ' prospective student ',
-                 ' bestie' : ' best friend ',
+                 ' bestie ' : ' best friend ',
+                 ' besties ': ' best friends ',
                  ' ngl ': ' not gonna lie ',
                  ' rn ': ' right now ',
+                 ' lowkey ': ' low key ',
                  ' mf ': ' motherfucker '}
 
 
@@ -265,11 +271,17 @@ def main():
     # train
     # TODO: will experiment in changing num epochs here
     # (verbose prints training progress, i.e. 'x/epochs')
-    model.fit(predictors, label, epochs=50, verbose=2)
+    #model.fit(predictors, label, epochs=50, verbose=2)
+
+    # save pickled model
+    #storeModel(model, "trained_model_medium.pkl")
+
+    # load pickled model
+    model = loadModel("trained_model_medium.pkl")
 
     # generate text
     seed_text = "my"  # can be anything (TODO: will change to set to maybe random)
-    next_words = 6  # num of next words to predict following seed_text, TODO: experiment with
+    next_words = 10  # num of next words to predict following seed_text, TODO: experiment with
     print(generate_text(seed_text, next_words, model, max_sequence_len, tokenizer))
 
 
