@@ -71,6 +71,11 @@ def handle_abbreviation(data):
                  ' asap ': ' as soon as possible ',
                  ' r ': ' are ',
                  ' ur ': ' your ',
+                 ' urself ': ' urself ',
+                 ' roomie': ' roommate',
+                 ' Roomie': ' roomate',
+                 ' CBT ': ' cock and ball torture',
+                 ' jr ': ' junior ',
                  ' atm ': ' at the moment ',
                  ' brt ': ' be right there ',
                  ' brb ': ' be right back ',
@@ -93,7 +98,6 @@ def handle_abbreviation(data):
                  ' pov ': ' point of view ',
                  ' b4 ': ' before ',
                  ' bff ': ' best friends forever ',
-                 ' i ': ' I ',
                  ' bf ': ' boyfriend ',
                  ' gf ': ' girlfriend ',
                  ' cmon ': ' come on ',
@@ -159,6 +163,7 @@ def handle_abbreviation(data):
                  ' hbu ': ' how about you ',
                  ' w/o ': ' without ',
                  ' w/ ': ' with ',
+                 ' w ': ' with ',
                  ' wrk ': ' work ',
                  ' yolo ': ' you only live once ',
                  ' b00bs ': ' boobs ',
@@ -168,17 +173,16 @@ def handle_abbreviation(data):
                  ' besties ': ' best friends ',
                  ' ngl ': ' not gonna lie ',
                  ' rn ': ' right now ',
-                 ' lowkey ': ' low key ',
+                 ' yk ': ' you know ',
+                 ' lil ': ' little ',
+                 ' tiddies ': ' titties ',
+                 ' fuckin ': ' fucking ',
                  ' mf ': ' motherfucker '}
 
 
 
     data.replace(replacers, regex=True, inplace=True)
     return data
-
-def standardize_text(text):
-    txt = "".join(v for v in text if v not in string.punctuation).lower()
-    return txt
 
 
 # ========= KAGGLE CODE =========
@@ -251,12 +255,13 @@ def main():
     input_file = "yikyakyeo/data_sets/medium_yikyakyeo_100_count.csv"
     # input_file = "yikyakyeo/data_sets/yikyakyeo.csv"
     data = pd.read_csv(input_file)
+
+    # standardize text before finding abbreviations
+    data["text"] = data['text'].str.replace('[^\w\s]', '')
+    data["text"] = data['text'].str.lower()
+
     # handles abbreviations here
     data = handle_abbreviation(data)
-    # creates array for all yaks from 'text' column
-    yaks = data['text'].tolist()
-    for i in range(len(yaks)):
-        yaks[i] = standardize_text(yaks[i])
 
     # generate sequence of N-gram Tokens for the model to predict the next token
     # (every int in input_sequences corresponds to the index of a word in the whole vocabulary)
