@@ -279,13 +279,13 @@ def main():
     # train
     # TODO: will experiment in changing num epochs here
     # (verbose prints training progress, i.e. 'x/epochs')
-    #model.fit(predictors, label, epochs=50, verbose=2)
+    #model.fit(predictors, label, epochs=100, verbose=2)
 
     # save pickled model
-    #storeModel(model, "trained_model_medium.pkl")
+    #storeModel(model, "trained_model_medium_100epochs.pkl")
 
     # load pickled model
-    model = loadModel("trained_model_medium.pkl")
+    model = loadModel("trained_model_medium_100epochs.pkl")
 
     # generate text
     seed_text = "my"  # can be anything (TODO: will change to set to maybe random)
