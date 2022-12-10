@@ -62,6 +62,7 @@ Main Program for YikYakYeo
 
 def handle_abbreviation(data):
     replacers = {' dm ': ' direct message ',
+                 ' bc ': ' because ',
                  ' thx ': ' thanks ',
                  ' dming ': ' direct messaging ',
                  ' dmed ': ' direct messaged ',
@@ -91,6 +92,7 @@ def handle_abbreviation(data):
                  ' tbh ': ' to be honest ',
                  ' tbf ': ' to be fair ',
                  ' wtf ': ' what the fuck ',
+                 ' wt ': ' winter term ',
                  ' u2 ': ' you too ',
                  ' irl ': ' in real life ',
                  ' idfk ': ' i dont fucking know ',
@@ -179,7 +181,9 @@ def handle_abbreviation(data):
                  ' lil ': ' little ',
                  ' tiddies ': ' titties ',
                  ' fuckin ': ' fucking ',
-                 ' mf ': ' motherfucker '}
+                 ' mf ': ' motherfucker ',
+                 ' mfs ': ' motherfuckers ',
+                 ' fml ': ' fuck my life '}
 
 
 
