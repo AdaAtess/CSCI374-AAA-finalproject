@@ -95,6 +95,7 @@ def handle_abbreviation(data):
                  ' tbh ': ' to be honest ',
                  ' tbf ': ' to be fair ',
                  ' wtf ': ' what the fuck ',
+                 ' tf ': ' the fuck ',
                  ' wt ': ' winter term ',
                  ' u2 ': ' you too ',
                  ' irl ': ' in real life ',
