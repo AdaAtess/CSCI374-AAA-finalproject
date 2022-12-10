@@ -1,0 +1,10 @@
+
+opython:S1192{"KDefine a constant instead of duplicating this literal ' probably ' 4 times.(ÏÃ²ëûÿÿÿÿ8Ôÿ–šÏ0
+jpython:S1192€"JDefine a constant instead of duplicating this literal ' because ' 3 times.(ğÿ™–8Õÿ–šÏ0
+npython:S1542"ORename function "storeData" to match the regular expression ^[a-z_][a-z0-9_]*$.(˜èÒ8Õÿ–šÏ0
+mpython:S1542"NRename function "loadData" to match the regular expression ^[a-z_][a-z0-9_]*$.(®²æç8Õÿ–šÏ0
+opython:S1542("PRename function "storeModel" to match the regular expression ^[a-z_][a-z0-9_]*$.(¯Ãıå8Õÿ–šÏ0
+spython:S15422"ORename function "loadModel" to match the regular expression ^[a-z_][a-z0-9_]*$.(Áâšüÿÿÿÿ8Õÿ–šÏ0
+Ypython:S1135ß"4Complete the task associated to this "TODO" comment.(Ú‹ƒòıÿÿÿÿ8Õÿ–šÏ0
+Tpython:S1135´"4Complete the task associated to this "TODO" comment.(Ÿşñ£8Öÿ–šÏ0
+=python:S125¼"Remove this commented out code.(”ùJ8ÚÓè½Ï0
