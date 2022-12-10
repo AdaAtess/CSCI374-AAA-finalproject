@@ -69,6 +69,9 @@ def handle_abbreviation(data):
                  ' pls ': ' please ',
                  ' plz ': ' please ',
                  ' u ': ' you ',
+                 ' n ': ' and ',
+                 ' prof ': ' professor ',
+                 ' profs ': ' professors ',
                  ' asap ': ' as soon as possible ',
                  ' r ': ' are ',
                  ' ur ': ' your ',
@@ -113,6 +116,7 @@ def handle_abbreviation(data):
                  ' ily ': ' i love you ',
                  ' lysm ': ' i love you so much ',
                  ' ts ': ' this shit ',
+                 ' st ': ' shit ',
                  ' ilym ': ' i love you more ',
                  ' idc ': ' i dont care ',
                  ' rly ': ' really ',
@@ -183,7 +187,8 @@ def handle_abbreviation(data):
                  ' fuckin ': ' fucking ',
                  ' mf ': ' motherfucker ',
                  ' mfs ': ' motherfuckers ',
-                 ' fml ': ' fuck my life '}
+                 ' fml ': ' fuck my life ',
+                 ' abt ': ' about '}
 
 
 
