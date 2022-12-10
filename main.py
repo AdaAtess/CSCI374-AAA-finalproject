@@ -80,6 +80,7 @@ def handle_abbreviation(data):
                  ' Roomie': ' roomate',
                  ' CBT ': ' cock and ball torture',
                  ' jr ': ' junior ',
+                 'sr': 'senior',
                  ' atm ': ' at the moment ',
                  ' brt ': ' be right there ',
                  ' brb ': ' be right back ',
@@ -91,7 +92,7 @@ def handle_abbreviation(data):
                  ' lol ': ' laughing out loud ',
                  ' lmao ': ' laughed my ass off ',
                  ' lmfao ': ' laughed my fucking ass off ',
-                 ' idk ': ' i dont know ',
+                 ' idk ': ' i do not know ',
                  ' tbh ': ' to be honest ',
                  ' tbf ': ' to be fair ',
                  ' wtf ': ' what the fuck ',
@@ -99,8 +100,8 @@ def handle_abbreviation(data):
                  ' wt ': ' winter term ',
                  ' u2 ': ' you too ',
                  ' irl ': ' in real life ',
-                 ' idfk ': ' i dont fucking know ',
-                 ' idek ': ' i dont even know ',
+                 ' idfk ': ' i do not fucking know ',
+                 ' idek ': ' i do not even know ',
                  ' pov ': ' point of view ',
                  ' b4 ': ' before ',
                  ' bff ': ' best friends forever ',
@@ -165,7 +166,7 @@ def handle_abbreviation(data):
                  ' sry ': ' sorry ',
                  ' srs ': ' serious ',
                  ' srsly ': ' seriously ',
-                 ' sup ': ' whats up ',
+                 ' sup ': ' what is up ',
                  ' str8 ': ' straight ',
                  ' tgif ': ' thank god its friday ',
                  ' wbu ': ' what about you ',
@@ -189,7 +190,23 @@ def handle_abbreviation(data):
                  ' mf ': ' motherfucker ',
                  ' mfs ': ' motherfuckers ',
                  ' fml ': ' fuck my life ',
-                 ' abt ': ' about '}
+                 ' abt ': ' about ',
+                 " I'd ": " I would ",
+                 " don't ": " do not ",
+                 " y'all ": " you all ",
+                 ' RA ' : ' resident assistant ',
+                 " I've ": ' I have ',
+                 ' ft ': ' feet ',
+                 " you're ": "you are",
+                 ' con ': ' conservatory ',
+                 " i'll ": " i will ",
+                 " doesn't ": " does not ",
+                 " didn't ": " did not ",
+                 ' ya ': ' you ',
+                 ' wanna ': ' want to ',
+                 ' gonna ': ' going to '
+                 }
+
 
 
 
