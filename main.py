@@ -209,7 +209,7 @@ def handle_abbreviation(data):
                  ' psa ': ' public service announcement ',
                  ' nite ': ' night',
                  ' n ': ' and '
-                 
+
                  }
 
     data.replace(replacers, regex=True, inplace=True)
@@ -258,6 +258,8 @@ def create_model(max_sequence_len, total_words):
     # Add Output Layer
     model.add(Dense(total_words, activation='softmax'))
 
+    # TODO Randomize the next word to use instead of choosing the best
+
     model.compile(loss='categorical_crossentropy', optimizer='adam')
 
     return model
@@ -304,19 +306,20 @@ def main():
 
     # load pickled model (if applicable)
     # model = loadModel("trained_model_medium_100epochs.pkl")
-    model = loadModel("trained_model_100epochs.pkl")
+    # model = loadModel("trained_model_100epochs.pkl")
 
     # LSTM model
-    #model = create_model(max_sequence_len, total_words)
-    # model.summary()
+    model = create_model(max_sequence_len, total_words)
+    model.summary()
     # train
     # (verbose prints training progress, i.e. 'x/epochs')
-    model.fit(predictors, label, epochs=100, verbose=2)
+    model.fit(predictors, label, epochs=500, verbose=2)
 
     # save pickled model
     #storeModel(model, "trained_model_medium_100epochs.pkl")
     #storeModel(model, "trained_model_100epochs.pkl")
-    storeModel(model, "trained_model_200epochs.pkl")
+    # storeModel(model, "trained_model_200epochs.pkl")
+    storeModel(model, "trained_model_500epochs.pkl")
     # TODO: train on full data set for another 100 epochs
 
     # load pickled model
