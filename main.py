@@ -164,6 +164,7 @@ def handle_abbreviation(data):
                  ' np ': ' no problem ',
                  ' yw ': ' your welcome ',
                  ' sry ': ' sorry ',
+                 ' vry ': ' very ',
                  ' srs ': ' serious ',
                  ' srsly ': ' seriously ',
                  ' sup ': ' what is up ',
