@@ -209,10 +209,8 @@ def handle_abbreviation(data):
                  ' psa ': ' public service announcement ',
                  ' nite ': ' night',
                  ' n ': ' and '
+                 
                  }
-
-
-
 
     data.replace(replacers, regex=True, inplace=True)
     return data
