@@ -205,7 +205,10 @@ def handle_abbreviation(data):
                  " didn't ": " did not ",
                  ' ya ': ' you ',
                  ' wanna ': ' want to ',
-                 ' gonna ': ' going to '
+                 ' gonna ': ' going to ',
+                 ' psa ': ' public service announcement ',
+                 ' nite ': ' night',
+                 ' n ': ' and '
                  }
 
 
