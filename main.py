@@ -1,6 +1,6 @@
 # keras module for building LSTM
 from keras.utils import pad_sequences
-from keras.layers import Embedding, LSTM, Dense, Dropout
+from keras.layers import Embedding, LSTM, Dense, Dropout, Bidirectional
 from keras.preprocessing.text import Tokenizer
 from keras.callbacks import EarlyStopping
 from keras.models import Sequential
@@ -252,8 +252,8 @@ def create_model(max_sequence_len, total_words):
     model.add(Embedding(total_words, 10, input_length=input_len))
 
     # Add Hidden Layer 1 - LSTM Layer
-    model.add(LSTM(100))
-    model.add(Dropout(0.1))
+    model.add(LSTM(100, unroll = True))
+    model.add(Dropout(0.6))
 
     # Add Output Layer
     model.add(Dense(total_words, activation='softmax'))
@@ -264,6 +264,21 @@ def create_model(max_sequence_len, total_words):
 
     return model
 
+def bidirectional_lstm_model(max_sequence_len, total_words):
+    input_len = max_sequence_len - 1
+    print('Build LSTM model.')
+    model = Sequential()
+
+    # Add Input Embedding Layer
+    model.add(Embedding(total_words, 10, input_length=input_len))
+
+    model.add(Bidirectional(LSTM(100, activation="relu", unroll = True )))
+    model.add(Dropout(0.6))
+    model.add(Dense(total_words, activation='softmax'))
+
+    model.compile(loss='categorical_crossentropy', optimizer='adam')
+    print("Model built\n")
+    return model
 
 def generate_text(seed_text, next_words, model, max_sequence_len, tokenizer):
     for _ in range(next_words):
@@ -290,7 +305,7 @@ def main():
     data = pd.read_csv(input_file)
 
     # standardize text before finding abbreviations
-    data["text"] = data['text'].str.replace('[^\w\s]', '')
+    # data["text"] = data['text'].str.replace('[^\w\s]', '')
     data["text"] = data['text'].str.lower()
 
     # handles abbreviations here
@@ -310,16 +325,17 @@ def main():
 
     # LSTM model
     model = create_model(max_sequence_len, total_words)
+    # model = bidirectional_lstm_model(max_sequence_len, total_words)
     model.summary()
     # train
     # (verbose prints training progress, i.e. 'x/epochs')
-    model.fit(predictors, label, epochs=500, verbose=2)
+    model.fit(predictors, label, epochs=10, verbose=2)
 
     # save pickled model
     #storeModel(model, "trained_model_medium_100epochs.pkl")
     #storeModel(model, "trained_model_100epochs.pkl")
     # storeModel(model, "trained_model_200epochs.pkl")
-    storeModel(model, "trained_model_500epochs.pkl")
+    storeModel(model, "trained_model_100_unroll_epochs.pkl")
     # TODO: train on full data set for another 100 epochs
 
     # load pickled model
