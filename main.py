@@ -208,7 +208,8 @@ def handle_abbreviation(data):
                  ' gonna ': ' going to ',
                  ' psa ': ' public service announcement ',
                  ' nite ': ' night',
-                 ' n ': ' and '
+                 ' n ': ' and ',
+                 ' lfg ': ' looking for group '
                  }
 
     data.replace(replacers, regex=True, inplace=True)
