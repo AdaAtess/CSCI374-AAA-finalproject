@@ -209,7 +209,6 @@ def handle_abbreviation(data):
                  ' psa ': ' public service announcement ',
                  ' nite ': ' night',
                  ' n ': ' and '
-
                  }
 
     data.replace(replacers, regex=True, inplace=True)
@@ -329,7 +328,7 @@ def main():
     model.summary()
     # train
     # (verbose prints training progress, i.e. 'x/epochs')
-    model.fit(predictors, label, epochs=10, verbose=2)
+    model.fit(predictors, label, epochs=100, verbose=2)
 
     # save pickled model
     #storeModel(model, "trained_model_medium_100epochs.pkl")
